@@ -4,9 +4,9 @@
 ```bash
 sudo board-config.sh
 ```
--> make_mmc_boot
-"do you want to clone?" -> yes
-"do you want to format?" -> yes
+-> make_mmc_boot  
+"do you want to clone?" -> yes  
+"do you want to format?" -> yes  
 "clone succeeded" -> ok
   
 ```bash
