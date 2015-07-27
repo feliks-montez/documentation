@@ -22,11 +22,23 @@ df -h
 ```
 again, check size of /dev/mmcblk0p2 and repeat if nessessary
 
-# Install Java
+## Install Java
 ```bash
 echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee -a /etc/apt/sources.list
 echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee -a /etc/apt/sources.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
+```
+
+## Config hostnames
+### Avahi (mDNS)
+```bash
+sudo apt-get install avahi-daemon
+sudo update-rc.d avahi-daemon defaults
+```
+or
+```bash
+sudo apt-get install libnss-mdns
+sudo update-rc.d avahi-daemon defaults
 ```
