@@ -41,7 +41,9 @@ nameserver 127.0.0.1
  ```nss-mdns``` is a plugin for the GNU Name Service Switch (NSS) functionality of the GNU C Library (glibc) providing host name resolution via Multicast DNS (using Zeroconf, aka Apple Bonjour / Apple Rendezvous ), effectively allowing name resolution by common Unix/Linux programs in the ad-hoc mDNS domain .local
 
 3. Check ```/etc/nsswitch.conf```
+
  hosts:     ```files mdns4_minimal dns [NOTFOUND=return] mdns4```
+
  It should have ```mdns4_minimal``` or ```mdns4``` before ```[NOTFOUND=return]``` and before ```dns``` if you have a DNS server that configured resolve ```*.local```.
 
 4. Reboot
