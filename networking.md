@@ -47,3 +47,8 @@ nameserver 127.0.0.1
  It should have ```mdns4_minimal``` or ```mdns4``` before ```[NOTFOUND=return]``` and before ```dns``` if you have a DNS server that configured resolve ```*.local```.
 
 4. Reboot
+
+### Reverse IP lookup using Avahi
+```bash
+getent hosts 192.168.x.x
+```
