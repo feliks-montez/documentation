@@ -29,20 +29,19 @@ nameserver 127.0.0.1
 ### When *.local names are not resolved
 1. Install ```avahi-dnsconfd```
 
-```bash
-sudo apt-get install avahi-daemon avahi-dnsconfd avahi-discover avahi-utils
-```
-```avahi-dnsconfd``` listens to the publishing and passes them to ```resolvconf```.
+ ```bash
+ sudo apt-get install avahi-daemon avahi-dnsconfd avahi-discover avahi-utils
+ ```
+ ```avahi-dnsconfd``` listens to the publishing and passes them to ```resolvconf```.
 
 2. Install ```libnss-mdns``` (This library was missing, Installing it fixed the problem in this case)
+ ```bash
+ sudo apt-get install libnss-mdns
+ ```
+ ```nss-mdns``` is a plugin for the GNU Name Service Switch (NSS) functionality of the GNU C Library (glibc) providing host name resolution via Multicast DNS (using Zeroconf, aka Apple Bonjour / Apple Rendezvous ), effectively allowing name resolution by common Unix/Linux programs in the ad-hoc mDNS domain .local
 
-```bash
-sudo apt-get install libnss-mdns
-```
-```nss-mdns``` is a plugin for the GNU Name Service Switch (NSS) functionality of the GNU C Library (glibc) providing host name resolution via Multicast DNS (using Zeroconf, aka Apple Bonjour / Apple Rendezvous ), effectively allowing name resolution by common Unix/Linux programs in the ad-hoc mDNS domain .local
 3. Check ```/etc/nsswitch.conf```
-
-hosts:     ```files mdns4_minimal dns [NOTFOUND=return] mdns4```
-It should have ```mdns4_minimal``` or ```mdns4``` before ```[NOTFOUND=return]``` and before ```dns``` if you have a DNS server that configured resolve ```*.local```.
+ hosts:     ```files mdns4_minimal dns [NOTFOUND=return] mdns4```
+ It should have ```mdns4_minimal``` or ```mdns4``` before ```[NOTFOUND=return]``` and before ```dns``` if you have a DNS server that configured resolve ```*.local```.
 
 4. Reboot
