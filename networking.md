@@ -52,3 +52,11 @@ nameserver 127.0.0.1
 ```bash
 getent hosts 192.168.x.x
 ```
+
+### Set up Dynamic DNS with nsupdate and bind
+Still not sure how...
+
+### Set up DNSSEC on an authoritative BIND DNS server
+When you install bind9, ```sudo apt-get install bind9```, it will automatically install ```dnssec-keygen```.
+
+[Here](https://www.digitalocean.com/community/tutorials/how-to-setup-dnssec-on-an-authoritative-bind-dns-server--2) is an article that details the process.
