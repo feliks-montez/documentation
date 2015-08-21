@@ -60,3 +60,10 @@ Still not sure how...
 When you install bind9, ```sudo apt-get install bind9```, it will automatically install ```dnssec-keygen```.
 
 [Here](https://www.digitalocean.com/community/tutorials/how-to-setup-dnssec-on-an-authoritative-bind-dns-server--2) is an article that details the process.
+
+### Configure network to use your DNS servers
+In ```/etc/dhcp/dhclient.conf``` uncomment the
+```bash
+perpend domain-name-servers 127.0.0.1
+```
+line and add in the addresses of your DNS servers. Then remove ```domain-name-servers``` from the list in the next line (```request```).
