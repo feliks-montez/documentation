@@ -53,8 +53,14 @@ nameserver 127.0.0.1
 getent hosts 192.168.x.x
 ```
 
+### Set up DNS server with BIND9
+Follow [this](https://wiki.debian.org/Bind9) guide.
+
+### Set up DHCP server with isc-dhcp-server
+Follow [this](https://wiki.debian.org/DHCP_Server) guide.
+
 ### Set up Dynamic DNS with nsupdate and bind
-Still not sure how...
+Follow [this](https://wiki.debian.org/DDNS) guide.
 
 ### Set up DNSSEC on an authoritative BIND DNS server
 When you install bind9, ```sudo apt-get install bind9```, it will automatically install ```dnssec-keygen```.
