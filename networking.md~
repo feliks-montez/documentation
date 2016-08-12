@@ -16,14 +16,6 @@ iface eth0 inet dhcp
 ```
 and reboot.
 
-## Local Networking
-
-### RTNETLINK answers: File exists
-Just run this:
-```bash
-sudo ifdown eth0; sudo ifdown eth0; sudo ifup eth0
-```
-
 ## Setting up local DNS
 
 Edit `/etc/resolveconf/resolv.conf.d/base` to permenantly update `/etc/resolv.conf`.

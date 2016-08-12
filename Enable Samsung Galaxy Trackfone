@@ -1,0 +1,21 @@
+Open the terminal and run these commands:
+  sudo apt-get install libmtp-common mtp-tools libmtp-dev libmtp-runtime libmtp9
+  
+  sudo gedit /etc/fuse.conf
+    at the bottom of the file, look for "#user_allow_other" and remove the "#" from it
+    
+  sudo gedit /lib/udev/rules.d/69-mtp.rules
+    Paste these lines into it:
+      # Samsung Galaxy Trackfone
+      ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+  
+  sudo gedit /etc/udev/rules.d/51-android.rules
+    Paste this line into it:
+      ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666"
+
+  sudo service udev restart
+  
+  THIS COMMAND WILL REBOOT YOUR COMPUTER:
+    sudo reboot
+  
+When your computer comes back up, you should be able to open your files and see "Android" over on the left side. That folder is your android phone.

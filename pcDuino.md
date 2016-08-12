@@ -1,5 +1,11 @@
 # pcDuino Tips
 
+## Add stable source
+add this to /etc/apt/sources.list
+```bash
+deb http://old-releases.ubuntu.com/ubuntu/ quantal main universe
+```
+
 ## Create bootable SD card clone
 ```bash
 sudo board-config.sh

@@ -26,13 +26,11 @@ done
 ```
 
 Make sure to change the username and password to that of your host machines, then run
-
 ```bash
 chmod +x ssh-distrib.sh
 ```
 
  on the script. Run the script like so:
- 
 ```bash
 ./ssh-distrib.sh host1 host2 host3 ...
 ```
